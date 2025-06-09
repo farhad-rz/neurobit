@@ -50,3 +50,22 @@ window.addEventListener("touchmove", e => setSpot(e.touches[0]));
 
 
 
+
+// ---------- SCRAMBLE CYCLE ----------
+const handleScramble = (text,  el_selector) => {
+    const el = document.querySelector(el_selector);
+    el.innerHTML = text;
+    new ScrambleText(el).play().start();
+};
+
+function cycle(el_selector) {
+    try {
+        handleScramble(TEXTS[i % TEXTS.length], el_selector);
+        i++; setTimeout(cycle, 5000);
+    } catch (error) {
+        // passs
+    }
+    
+    
+}
+
