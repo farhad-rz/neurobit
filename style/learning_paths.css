@@ -113,6 +113,9 @@
 .card-apply {
     padding: 1rem 0;
     margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .card-apply-btn {
@@ -128,6 +131,19 @@
 
 .card-apply-btn:hover {
     filter: brightness(1.15)
+}
+.card-path-details-btn{
+    background: transparent;
+    color: var(--text);
+    padding: .4rem 1.5rem;
+    border: 1px solid var(--accent);
+    font-weight: 600;
+    font-family: var(--font-display);
+    cursor: pointer;
+    transition: filter .25s
+}
+.card-path-details-btn:hover {
+    background: var(--accent);
 }
 
 
@@ -171,9 +187,10 @@
 
     .card-apply {
         padding-top: 1rem;
+        flex-direction: column;
     }
 
-    .btn-apply {
+    .card-apply-btn, .card-path-details-btn {
         width: 100%;
     }
 }
@@ -204,6 +221,11 @@
 }
 
 /* ---------- progress bar -------------------------------------- */
+.pdq_title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
 .pdq-progress {
     position: relative;
     height: .7rem;
