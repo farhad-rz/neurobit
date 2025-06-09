@@ -48,7 +48,10 @@
     --neon-glow: 0 0 4px var(--accent),
                  0 0 8px var(--accent),
                  0 0 12px var(--accent);
-  }
+    --surface-1: color-mix(in srgb, var(--accent) 3%, var(--bg));
+    /*  accent-alt برای گرادیان نوار پیشرفت */
+    --accent-alt:    color-mix(in srgb, var(--accent) 50%, #ffffff);
+}
   
 /* 2.  DARK theme overrides --------------------------------------- */
 [data-theme="dark"] {
@@ -57,7 +60,20 @@
     --fg: #ffffff;
     --acrylic-dark: rgba(20, 20, 20, .85);
     --acrylic-border: rgba(255, 255, 255, .08);
+    --surface-1:     color-mix(in srgb, var(--accent) 6%, var(--bg));
+    --accent-alt:    color-mix(in srgb, var(--accent) 45%, #000000);
 }
+
+@supports not (background: color-mix(in srgb, red 50%, blue)){
+    :root{
+      --surface-1: #f6fffe;           /* برای لایت */
+      --accent-alt:#66ffe6;
+    }
+    [data-theme="dark"]{
+      --surface-1:#0d1417;            /* برای دارک */
+      --accent-alt:#2efed0;
+    }
+  }
 /* ---------- RESET ---------- */
 *,
 *::before,
@@ -796,40 +812,3 @@ html[dir="rtl"] .carousel-track{
     direction:ltr;        /* or: flex-direction:row; direction:ltr; */
   }
 
-/* ---------- LEARNING PATHS PAGE ---------- */
-#learning-paths-main {
-    padding-top: 120px; /* Adjust as needed to clear the fixed header */
-    text-align: center;
-}
-
-#learning-paths-main .lead {
-    margin-bottom: 40px;
-}
-
-#learning-paths-main section {
-    margin-bottom: 60px;
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--bg-alt);
-}
-
-#learning-paths-main section h2 {
-    font-size: 1.8rem;
-    color: var(--accent);
-    margin-bottom: 15px;
-}
-
-#learning-paths-main section p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* RTL Styles for Learning Paths */
-html[dir="rtl"] #learning-paths-main section h2 {
-    text-align: right;
-}
-
-html[dir="rtl"] #learning-paths-main section p {
-    text-align: right;
-}
