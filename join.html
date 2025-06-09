@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEUROBIT</title>
+  <!-- ============ FONTS ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="yasanlogo.png"/>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/join_style.css">
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header>
+    <a href="index.html/" class="logo-square" aria-label="Home"><img src="assets/neurobit_main_logo.webp" alt=""><span data-i18n="logo_text" class="logo-text">neurobit</span></a>
+    <nav class="desktop-nav">
+      <a href="index.html/#manifesto" data-i18n="nav_manifesto">What Neurobit do?</a>
+      <a href="index.html/#process" data-i18n="nav_process">Process</a>
+      <a href="learning-paths.html" data-i18n="nav_learning_paths">Learning Paths</a>
+      <button class="btn-apply" data-i18n="nav_apply" onclick="window.location.href='join.html'">Apply</button>
+      <button id="langToggle" class="lang-toggle">FA</button>
+      <button id="themeToggle" class="theme-toggle" aria-label="Switch theme"><span>🌙</span></button>
+    </nav>
+    <button class="menu-icon" id="openMenu" aria-label="Open menu"><span></span><span></span></button>
+    
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="close-btn" id="closeMenu" aria-label="Close menu">&times;</button>
+    <div class="mobile-menu-inner">
+      <div style="text-align: center;">
+        <button  class="lang-toggle lang-btn-mobile" style="margin-left: 0;">FA</button>
+      </div>
+      <a href="#manifesto" class="mobile-link" data-i18n="nav_manifesto">Manifesto</a>
+      <a href="#process" class="mobile-link" data-i18n="nav_process">Process</a>
+      <a href="learning-paths.html" class="mobile-link" data-i18n="nav_learning_paths">Learning Paths</a>
+      <button class="btn-apply mobile-apply" data-i18n="nav_apply"
+        onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});document.getElementById('mobileMenu').classList.remove('open');">Apply</button>
+    </div>
+  </div>
+
+  <!-- ============ APPLICATION FORM ============ -->
+  <section id="application">
+    <p class="intro" data-i18n="application_intro">
+      Start your journey by filling in the details below and take the first
+      step toward building your future.
+    </p>
+
+    <form id="applyForm" autocomplete="off" novalidate>
+      <!-- Full name -->
+      <div class="field-group">
+        <label for="fullName" data-i18n="application_fullname_label">Full name</label>
+        <input type="text" id="fullName" required />
+      </div>
+
+      <!-- Phone -->
+      <div class="field-group">
+        <label for="phone" data-i18n="application_phone_label">Phone number</label>
+        <input
+          type="tel"
+          id="phone"
+          maxlength="30"
+        />
+      </div>
+
+      <!-- Location -->
+      <div class="field-group">
+        <label for="location" data-i18n="application_location_label">Location</label>
+        <input type="text" id="location" />
+      </div>
+
+      <!-- Age -->
+      <div class="field-group">
+        <label for="age" data-i18n="application_age_label">Age</label>
+        <input type="number" id="age" min="10" max="99" />
+      </div>
+
+      <!-- sop intro -->
+      <div class="field-group">
+        <label for="sopfile" data-i18n="application_sop_label">Your SOP file to join Neurobit</label>
+
+        <ul class="sop-guidelines">
+          <li data-i18n="application_guideline1">
+            Tell us who you are, what you’ve done, and why you want to be part of Neurobit.
+          </li>
+          <li data-i18n="application_guideline2">
+            Be honest and transparent, and write a concise text.
+          </li>
+          <li data-i18n="application_guideline3">
+            The SOP letter should be a maximum of 2 pages.
+          </li>
+        </ul>
+
+        <input type="file" id="sopfile" name="sopfile">
+      </div>
+
+      <!-- Submit -->
+      <button class="btn-submit" type="submit" data-i18n="application_submit">
+        Submit
+      </button>
+    </form>
+  </section>
+
+
+  
+
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <span data-i18n="footer_copy">© 2025 – All rights neurobit-reserved.</span>
+    <span data-i18n="footer_made">Crafted with ❤️ for Iranian youth</span>
+  </footer>
+
+  <!-- ============ JS ============ -->
+  <script src="https://cdn.jsdelivr.net/npm/scramble-text@0.0.9/dist/ScrambleText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+  <script src="script/glitch.js"></script>
+  <script src="script/translate_join.js"></script>
+  <script src="script/script.js"></script>
+</body>
+</html>
